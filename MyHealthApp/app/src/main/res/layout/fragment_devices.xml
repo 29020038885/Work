@@ -1,0 +1,103 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 手动输入 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手动输入数据："
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 用户ID -->
+        <EditText
+            android:id="@+id/editUserId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户序号（userID）"
+            android:inputType="number" />
+
+        <!-- 用户名称 -->
+        <EditText
+            android:id="@+id/editTextDeviceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="用户名称" />
+
+        <!-- 心率 -->
+        <EditText
+            android:id="@+id/editTextDeviceHeartRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="心率"
+            android:inputType="number" />
+
+        <!-- 步数 -->
+        <EditText
+            android:id="@+id/editTextDeviceStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="步数"
+            android:inputType="number" />
+
+        <!-- 数据时间 -->
+        <EditText
+            android:id="@+id/editTextDeviceTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="记录时间（yyyy-MM-dd HH:mm:ss）"
+            android:inputType="datetime" />
+
+        <!-- 上传按钮 -->
+        <Button
+            android:id="@+id/buttonSubmitDeviceData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="上传数据"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 模拟实时数据 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="实时数据（模拟蓝牙获取）："
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 模拟显示心率 -->
+        <TextView
+            android:id="@+id/textViewSimulatedHeartRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="心率：--"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 模拟显示步数 -->
+        <TextView
+            android:id="@+id/textViewSimulatedStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="步数：--"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 模拟显示时间 -->
+        <TextView
+            android:id="@+id/textViewSimulatedTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="记录时间：--"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

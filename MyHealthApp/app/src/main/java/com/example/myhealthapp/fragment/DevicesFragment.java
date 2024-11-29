@@ -111,7 +111,7 @@ public class DevicesFragment extends Fragment {
                 int simulatedHeartRate = 60 + random.nextInt(41); // 心率 60~100
                 int simulatedStep = 100 + random.nextInt(401);    // 步数 100~500
 
-                String simulatedTime = "2024-11-26T23:11:55";
+                String simulatedTime = "2024-11-29T23:11:55";
 
                 // 显示在页面上
                 textViewSimulatedHeartRate.setText("心率：" + simulatedHeartRate);

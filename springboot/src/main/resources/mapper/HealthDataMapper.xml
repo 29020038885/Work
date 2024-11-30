@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.HealthDataMapper">
+
+    <!-- 查询所有数据 -->
+    <select id="getAllHealthData" resultType="com.example.entity.HealthData">
+        SELECT id, userid, name, heartrate, step, time
+        FROM healthdata
+    </select>
+
+    <!-- 根据ID查询数据 -->
+    <select id="getHealthDataById" parameterType="int" resultType="com.example.entity.HealthData">
+        SELECT id, userid, name, heartrate, step, time
+        FROM healthdata
+        WHERE id = #{id}
+    </select>
+
+    <!-- 插入数据 -->
+    <insert id="insertHealthData" parameterType="com.example.entity.HealthData" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO healthdata (userid, name, heartrate, step, time)
+        VALUES (#{userid}, #{name}, #{heartrate}, #{step}, #{time})
+    </insert>
+
+    <!-- 更新数据 -->
+    <update id="updateHealthData" parameterType="com.example.entity.HealthData">
+        UPDATE healthdata
+        SET userid = #{userid}, name = #{name}, heartrate = #{heartrate}, step = #{step}, time = #{time}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除数据 -->
+    <delete id="deleteHealthData" parameterType="int">
+        DELETE FROM healthdata
+        WHERE id = #{id}
+    </delete>
+
+    <!-- 根据用户ID查询数据 -->
+    <select id="getHealthDataByUserID" parameterType="int" resultType="com.example.entity.HealthData">
+        SELECT id, userid, name, heartrate, step, time
+        FROM healthdata
+        WHERE userid = #{userid}
+        ORDER BY time DESC
+    </select>
+
+</mapper>

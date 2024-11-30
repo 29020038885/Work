@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 创建请求
         Request request = new Request.Builder()
-                .url("http://10.0.2.2:8080/healthdata/1")
+                .url("http://10.0.2.2:9090/healthdata/1")
                 .build();
 
         // 异步调用

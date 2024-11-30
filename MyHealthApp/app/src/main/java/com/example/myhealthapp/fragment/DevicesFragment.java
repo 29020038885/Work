@@ -111,7 +111,7 @@ public class DevicesFragment extends Fragment {
                 int simulatedHeartRate = 60 + random.nextInt(41); // 心率 60~100
                 int simulatedStep = 100 + random.nextInt(401);    // 步数 100~500
 
-                String simulatedTime = "2024-11-29T23:11:55";
+                String simulatedTime = "2024-11-30T23:11:55";
 
                 // 显示在页面上
                 textViewSimulatedHeartRate.setText("心率：" + simulatedHeartRate);
@@ -134,10 +134,10 @@ public class DevicesFragment extends Fragment {
 
         // 构建 JSON 数据
         String json = "{"
-                + "\"userID\":" + userId + ","
+                + "\"userid\":" + userId + ","
                 + "\"name\":\"" + name + "\","
                 + "\"time\":\"" + time + "\","
-                + "\"heartRate\":" + heartRate + ","
+                + "\"heartrate\":" + heartRate + ","
                 + "\"step\":" + step
                 + "}";
 
@@ -145,7 +145,7 @@ public class DevicesFragment extends Fragment {
         RequestBody body = RequestBody.create(json, MediaType.get("application/json; charset=utf-8"));
 
         // 构建 POST 请求
-        String url = "http://10.0.2.2:8080/healthdata";  // 服务器地址
+        String url = "http://10.0.2.2:9090/healthdata";  // 服务器地址
         Request request = new Request.Builder()
                 .url(url)
                 .post(body)

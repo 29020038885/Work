@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.SysAccountMapper">
+
+    <select id="selectAll" resultType="com.example.entity.SysAccount">
+        select * from sysaccount
+        <where>
+            <if test="name != null and number != ''">
+                (name like concat('%', #{name}, '%') OR number like concat('%', #{number}, '%'))
+            </if>
+        </where>
+        order by id desc
+    </select>
+
+    
+    <insert id="insert" parameterType="com.example.entity.SysAccount">
+        insert into `sysaccount` (username, password, name, sex, number, role)
+        values (#{username}, #{password}, #{name}, #{sex}, #{number}, #{role})
+    </insert>
+
+    <update id="updateById" parameterType="com.example.entity.SysAccount">
+        update `sysaccount` set name = #{name}, username = #{username}, password = #{password}, sex = #{sex}, number=#{number}, role=#{role}
+        where id = #{id}
+    </update>
+</mapper>
